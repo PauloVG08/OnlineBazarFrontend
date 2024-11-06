@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import config from '../../config';
 
 const DetalleProd = () => {
     const { id } = useParams();
@@ -13,7 +14,7 @@ const DetalleProd = () => {
     useEffect(() => {
         const fetchProductos = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/items/${id}`);
+                const response = await fetch(`${config.backendUrl}/api/items/${id}`);
                 if (!response.ok) {
                     throw new Error('Error al obtener el producto');
                 }
@@ -45,7 +46,7 @@ const DetalleProd = () => {
         if (!producto) return;
 
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/addSale", {
+            const response = await fetch(`${config.backendUrl}/api/addSale`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

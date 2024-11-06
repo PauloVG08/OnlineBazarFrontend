@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, ListGroup } from 'react-bootstrap';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import config from '../../config';
 
 function Busqueda() {
     const location = useLocation();
@@ -14,7 +15,7 @@ function Busqueda() {
     useEffect(() => {
         const fetchProductos = async () => {
             try {
-                const response = await fetch(`http://127.0.0.1:8000/api/items?q=${searchTerm}`);
+                const response = await fetch(`${config.backendUrl}/api/items?q=${searchTerm}`);
                 if (!response.ok) {
                     throw new Error('Error en la búsqueda');
                 }

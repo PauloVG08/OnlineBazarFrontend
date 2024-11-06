@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
+import config from '../../config';
 
 const Sales = () => {
     const [sales, setSales] = useState([]);
@@ -10,7 +11,7 @@ const Sales = () => {
     useEffect(() => {
         const fetchSales = async () => {
             try {
-                const response = await fetch("http://127.0.0.1:8000/api/sales/");
+                const response = await fetch(`${config.backendUrl}/api/sales/`);
                 if (!response.ok) {
                     throw new Error('Error al obtener las compras');
                 }
