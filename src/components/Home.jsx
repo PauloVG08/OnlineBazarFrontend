@@ -20,6 +20,7 @@ function Home() {
                 <Col className="text-center">
                     <img src="https://img.icons8.com/ios-filled/100/000000/shopping-bag.png" alt="logo" className="mb-3" />
                     <h1 className="display-4">Bazar Online</h1>
+                    <h4>Debido al servidor gratuito usado, la primera petición puede tardar hasta un minuto.</h4>
                 </Col>
             </Row>
             <Row className="mb-3">
