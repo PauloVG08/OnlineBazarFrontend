@@ -61,7 +61,6 @@ function Busqueda() {
 
     return (
         <Container className="my-4">
-            {/* Campo de búsqueda */}
             <Row className="mb-4">
                 <Col xs={12} md={10} lg={8} className="mx-auto">
                     <InputGroup>
@@ -85,25 +84,26 @@ function Busqueda() {
                 </Col>
             </Row>
             <ListGroup variant="flush">
-                {resultados.map(item => (
-                    <ListGroup.Item key={item.id} className="py-3" onClick={() => handleClickDetalle(item.id)} style={{ cursor: 'pointer' }}>
-                        <Row>
-                            <Col xs={3} className="d-flex justify-content-center align-items-center">
-                                <img src={item.thumbnail} alt={item.title} className="rounded-circle" style={{ width: '100px' }} />
-                            </Col>
-                            <Col xs={6}>
-                                <h5>{item.title}</h5>
-                                <p className="text-muted">{item.category}</p>
-                                <p>{item.description}</p>
-                            </Col>
-                            <Col xs={3} className="text-end">
-                                <h4>${item.price}</h4>
-                                <div className="text-warning">{renderRating(item.rating)}</div>
-                            </Col>
-                        </Row>
-                    </ListGroup.Item>
-                ))}
-            </ListGroup>
+    {resultados.map(item => (
+        <ListGroup.Item key={item.id} className="py-3" onClick={() => handleClickDetalle(item.id)} style={{ cursor: 'pointer' }}>
+            <Row>
+                <Col xs={3} className="d-flex justify-content-center align-items-center">
+                    <img src={item.thumbnail} alt={item.title} className="rounded-circle" style={{ width: '100px' }} />
+                </Col>
+                <Col xs={6}>
+                    <h5>{item.title}</h5>
+                    <p className="text-muted">{item.category}</p>
+                    <p>{item.description}</p>
+                </Col>
+                <Col xs={3} className="text-end">
+                    <h4>${item.price}</h4>
+                    <div className="text-warning">{renderRating(item.rating)}</div>
+                </Col>
+            </Row>
+        </ListGroup.Item>
+    ))}
+</ListGroup>
+
         </Container>
     );
 }

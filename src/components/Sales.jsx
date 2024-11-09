@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import config from '../../config';
+import './Sales.css';
 
 const Sales = () => {
     const [sales, setSales] = useState([]);
@@ -40,8 +41,8 @@ const Sales = () => {
                 {sales.length > 0 ? (
                     sales.map((sale) => (
                         <Col key={sale.id} md={4} className="mb-4">
-                            <Card>
-                                <Card.Img variant="top" src={sale.thumbnail} alt={sale.title} />
+                            <Card className="custom-card">
+                                <Card.Img variant="top" src={sale.thumbnail} alt={sale.title} className="product-thumbnail" />
                                 <Card.Body>
                                     <Card.Title>{sale.title}</Card.Title>
                                     <Card.Text>{sale.description}</Card.Text>

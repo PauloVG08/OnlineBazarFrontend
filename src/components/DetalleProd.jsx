@@ -5,6 +5,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import config from '../../config';
+import './DetalleProd.css';
 
 const DetalleProd = () => {
     const { id } = useParams();
@@ -102,8 +103,8 @@ const DetalleProd = () => {
             </Row>
             <Row className="text-center mb-4">
                 {producto.images.map((imgUrl, index) => (
-                    <Col key={index} xs={4}>
-                        <img src={imgUrl} alt={`${producto.title} ${index + 1}`} className="img-fluid" />
+                    <Col key={index} xs={12} sm={6} md={4} className="image-container">
+                        <img src={imgUrl} alt={`${producto.title} ${index + 1}`} className="img-fluid product-image" />
                     </Col>
                 ))}
             </Row>

@@ -14,6 +14,10 @@ function Home() {
         }
     };
 
+    const handleViewSales = () => {
+        navigate('/sales');
+    };
+
     return (
         <Container className="d-flex flex-column align-items-center justify-content-center vh-100">
             <Row className="mb-4">
@@ -38,7 +42,8 @@ function Home() {
             </Row>
             <Row>
                 <Col className="text-center">
-                    <Button variant="outline-dark" onClick={handleBusqueda}>Buscar</Button>
+                    <Button variant="outline-dark" onClick={handleBusqueda} className="me-2">Buscar</Button>
+                    <Button variant="outline-primary" onClick={handleViewSales}>Ver Compras</Button>
                 </Col>
             </Row>
         </Container>
